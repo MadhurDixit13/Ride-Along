@@ -7,6 +7,11 @@ const path = require('path');
 const PORT = process.env.PORT || 3001;
 
 const app = express();
+app.use(methodOverride('_method'))
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.set('views', path.join(__dirname), 'views');
+app.set('view engine', 'ejs');
 mongoose.connect('mongodb://localhost:27017/Ride_Along', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("Connection open");
