@@ -1,0 +1,19 @@
+{
+  "name": "mern-miniproject",
+  "version": "1.0.0",
+  "description": "a carpooling website in which users can carpool with each other based on their interests",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.0.10",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
