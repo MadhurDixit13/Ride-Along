@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.set('views', path.join(__dirname), 'views');
 app.set('view engine', 'ejs');
-mongoose.connect('mongodb://localhost:27017/Ride_Along', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017/ride_along', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("Connection open");
     })
@@ -21,7 +21,7 @@ mongoose.connect('mongodb://localhost:27017/Ride_Along', { useNewUrlParser: true
         console.log(err)
     });
 app.get('/', (req, res) => {
-    res.send("YO");
+    res.send("Hello");
 })
 
 app.listen(PORT, () => {
