@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+button {
+  font-family: inherit;
+}
+
+input {
+  font-family: inherit;
+  outline: none;
+}
