@@ -1,15 +1,3 @@
-// import React from "react";
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import Login from "./Login";
-// import "./App.css";
-// import Signup from "./Signup";
-// import Home from "./Home";
-// import { createMuiTheme } from "@material-ui/core/styles";
-// import { ThemeProvider } from "@material-ui/styles";
-// import { AuthProvider } from "./contexts/AuthContext";
-// import PrivateRoute from "./PrivateRoute";
-// import { AppProvider } from "./contexts/AppContext";
-// import Profile from "./Profile";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./Login";
@@ -22,6 +10,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import PrivateRoute from "./PrivateRoute";
 import { AppProvider } from "./contexts/AppContext";
 import Profile from "./Profile";
+import Logout from "./Logout";
 
 const THEME = createMuiTheme({
   typography: {
@@ -44,6 +33,7 @@ function App() {
               <Route exact path="/" component={Login} />
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
+              <Route path="/logout" component={Logout} /> 
               <AppProvider>
                 <PrivateRoute path="/home" component={Home} />
                 <PrivateRoute path="/profile" component={Profile} />
