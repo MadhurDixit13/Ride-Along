@@ -1,0 +1,87 @@
+.login {
+  background-color: #ffe2e1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
+.card1,
+.card2 {
+  background-color: white;
+  height: 50%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1em;
+  /* max-width: 500px; */
+}
+
+.card1 {
+  background-color: #FE8F8F;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.inputContainer > input {
+  border: none;
+  border-bottom: 2px solid #FE8F8F;
+  ;
+}
+
+input::placeholder {
+  font-family: "Poppins", sans-serif;
+}
+.card2 > h1 {
+  align-self: center;
+}
+.card2 > p {
+  margin-top: 1rem;
+  font-size: 0.6rem;
+  justify-content: center;
+  align-self: center;
+}
+
+.card2 > form {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loginBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.loginBtn > button {
+  background-color: #FE8F8F;
+  border-radius: 50px;
+  border: none;
+  width: 60%;
+  font-size: 0.75rem;
+  padding: 0.25em;
+}
+
+.errorMessage {
+  color: red;
+  align-self: center;
+  margin-top: 0.5em;
+}
+
+@media (min-width: 768px) {
+  .login {
+    flex-direction: row;
+  }
+  .card1,
+  .card2 {
+    height: 60%;
+    width: 40%;
+  }
+}
