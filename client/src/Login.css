@@ -20,7 +20,7 @@
 }
 
 .card1 {
-  background-color: #FE8F8F;
+  background-color: var(--special);
 }
 
 .inputContainer {
@@ -29,26 +29,28 @@
   margin-top: 1rem;
 }
 
-.inputContainer > input {
+.inputContainer>input {
   border: none;
-  border-bottom: 2px solid #FE8F8F;
+  border-bottom: 2px solid var(--special);
   ;
 }
 
 input::placeholder {
   font-family: "Poppins", sans-serif;
 }
-.card2 > h1 {
+
+.card2>h1 {
   align-self: center;
 }
-.card2 > p {
+
+.card2>p {
   margin-top: 1rem;
   font-size: 0.6rem;
   justify-content: center;
   align-self: center;
 }
 
-.card2 > form {
+.card2>form {
   margin-left: auto;
   margin-right: auto;
 }
@@ -60,7 +62,7 @@ input::placeholder {
   margin-top: 1em;
 }
 
-.loginBtn > button {
+.loginBtn>button {
   background-color: #FE8F8F;
   border-radius: 50px;
   border: none;
@@ -79,6 +81,7 @@ input::placeholder {
   .login {
     flex-direction: row;
   }
+
   .card1,
   .card2 {
     height: 60%;
