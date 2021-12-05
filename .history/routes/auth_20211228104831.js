@@ -10,7 +10,6 @@ const Ride = require("../models/Ride");
 const schema = Joi.object({
   username: Joi.string().min(6).required(),
   password: Joi.string().min(6).required(),
-  hobby: Joi.string().min(2).required(),
 });
 
 router.post("/register", async (req, res) => {
