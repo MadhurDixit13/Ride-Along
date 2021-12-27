@@ -14,11 +14,15 @@ const schema = Joi.object({
 
 router.post("/register", async (req, res) => {
   //validate data
-  const { error } = schema.validate(req.body);
+  const {
+    error
+  } = schema.validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
   //check if user already exists from db
-  const userExists = await User.findOne({ username: req.body.username });
+  const userExists = await User.findOne({
+    username: req.body.username
+  });
   if (userExists) return res.status(400).send("Username already exists");
 
   //hash password
@@ -41,7 +45,9 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   //check if user registered
-  const user = await User.findOne({ username: req.body.username });
+  const user = await User.findOne({
+    username: req.body.username
+  });
   if (!user) return res.status(400).send("User not found");
 
   //check if password valid
@@ -49,11 +55,15 @@ router.post("/login", async (req, res) => {
   if (!valid) return res.status(400).send("Invalid password");
 
   //assign JWT
-  const accessToken = jwt.sign(
-    { _id: user.id },
+  const accessToken = jwt.sign({
+      _id: user.id
+    },
     process.env.ACCESS_TOKEN_SECRET
   );
-  res.json({ accessToken: accessToken, userId: user.id });
+  res.json({
+    accessToken: accessToken,
+    userId: user.id
+  });
 });
 
 router.get("/isauth", verifyToken, (req, res) => {
@@ -61,7 +71,9 @@ router.get("/isauth", verifyToken, (req, res) => {
     if (!req.user) {
       return res.sendStatus(403);
     }
-    res.json({ id: req.user._id });
+    res.json({
+      id: req.user._id
+    });
   } catch {
     return res.sendStatus(403);
   }
@@ -71,28 +83,37 @@ router.get("/:userID/ride", verifyToken, async (req, res) => {
   //validate if request is from current user
   if (req.user._id !== req.params.userID) return res.status(401);
   //validate if user exists
-  const user = await User.findOne({ _id: req.user._id });
+  const user = await User.findOne({
+    _id: req.user._id
+  });
   if (!user) return res.status(400).send("User not found");
   const query = Ride.find({
-    $or: [
-      { ownerId: req.user._id },
-      { riders: req.user._id },
-      { requested: req.user._id },
+    $or: [{
+        ownerId: req.user._id
+      },
+      {
+        riders: req.user._id
+      },
+      {
+        requested: req.user._id
+      },
     ],
   });
   query
     .populate("riders")
     .populate("requested")
     .exec((err, data) => {
-      if (err) return res.status(500).json({ error: err.code });
+      if (err) return res.status(500).json({
+        error: err.code
+      });
       res.json(
         //sort by latest ride first
         data.sort((a, b) => {
-          return a.pickupTime < b.pickupTime
-            ? 1
-            : a.pickupTime > b.pickupTime
-              ? -1
-              : 0;
+          return a.pickupTime < b.pickupTime ?
+            1 :
+            a.pickupTime > b.pickupTime ?
+            -1 :
+            0;
         })
       );
     });
@@ -103,25 +124,34 @@ router.patch("/:userID", verifyToken, async (req, res) => {
   try {
     //validate if request is from current user
     if (req.user._id !== req.params.userID) return res.status(401);
-    const user = await User.findOneAndUpdate(
-      { _id: req.user._id },
-      {
-        $set: {
-          profileImageName: req.body.profileImageName,
-          profileImageId: req.body.profileImageId,
-        },
-      }
-    );
-    return res.json({ prevId: user.profileImageId });
+    const user = await User.findOneAndUpdate({
+      _id: req.user._id
+    }, {
+      $set: {
+        profileImageName: req.body.profileImageName,
+        profileImageId: req.body.profileImageId,
+      },
+    });
+    return res.json({
+      prevId: user.profileImageId
+    });
   } catch (err) {
-    return res.status(500).json({ error: err });
+    return res.status(500).json({
+      error: err
+    });
   }
 });
 
 router.get("/:userID/image", verifyToken, (req, res) => {
-  User.findOne({ _id: req.user._id }, "profileImageName", (err, user) => {
-    if (err) return res.status(500).json({ error: err });
-    return res.json({ profileImageName: user.profileImageName });
+  User.findOne({
+    _id: req.user._id
+  }, "profileImageName", (err, user) => {
+    if (err) return res.status(500).json({
+      error: err
+    });
+    return res.json({
+      profileImageName: user.profileImageName
+    });
   });
 });
 router.get("/logout", (req, res) => {

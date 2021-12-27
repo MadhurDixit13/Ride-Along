@@ -30,12 +30,15 @@
 .profileContent::-webkit-scrollbar {
   display: none;
 }
+
 .passengerTabs {
   color: grey;
 }
+
 .passengerTabs .MuiTab-wrapper {
   flex-direction: row-reverse;
 }
+
 .profilePopup {
   display: flex;
   align-items: center;
@@ -50,6 +53,7 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
 .myPassengerContainer {
   display: flex;
   align-items: center;
@@ -59,14 +63,15 @@
   border-radius: 5px;
 }
 
-.myPassengerContainer > button {
+.myPassengerContainer>button {
   border: none;
   border-radius: 5px;
   background-color: white;
   padding: 0.5em;
   cursor: pointer;
 }
-.myPassengerContainer > button:hover {
+
+.myPassengerContainer>button:hover {
   background-color: pink;
 }
 
