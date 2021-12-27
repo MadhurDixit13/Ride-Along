@@ -91,8 +91,8 @@ router.get("/:userID/ride", verifyToken, async (req, res) => {
           return a.pickupTime < b.pickupTime
             ? 1
             : a.pickupTime > b.pickupTime
-            ? -1
-            : 0;
+              ? -1
+              : 0;
         })
       );
     });
@@ -124,5 +124,7 @@ router.get("/:userID/image", verifyToken, (req, res) => {
     return res.json({ profileImageName: user.profileImageName });
   });
 });
-
+router.get("/logout", (req, res) => {
+  req.logout();
+})
 module.exports = router;
