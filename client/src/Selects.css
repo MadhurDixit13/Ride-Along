@@ -1,0 +1,59 @@
+.selectContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 15%;
+  max-width: 700px;
+}
+
+.selectContainer > .role {
+  width: 20%;
+}
+
+.role::before,
+.pickup::before,
+.dropoff::before {
+  display: block;
+  color: grey;
+  padding-left: 10px;
+  font-size: 0.75rem;
+}
+
+.role::before {
+  content: "I'm a";
+}
+.pickup::before {
+  content: "Pickup";
+}
+.dropoff::before {
+  content: "Dropoff";
+}
+
+.pickup,
+.dropoff {
+  width: 30%;
+  font-size: 1rem;
+}
+
+.searchBtn {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: var(--special);
+  border-radius: 5px;
+  height: 30%;
+  font-size: 0.75rem;
+  padding: 1em;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .selectContainer {
+  }
+  .searchBtn {
+    font-size: 0;
+    margin-top: 1em;
+    padding: 5px;
+  }
+}
