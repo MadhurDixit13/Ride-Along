@@ -125,6 +125,8 @@ router.get("/:userID/image", verifyToken, (req, res) => {
   });
 });
 router.get("/logout", (req, res) => {
-  req.logout();
+  delete req.user
+  req.user = null
+  // delete_cookie('connect.sid');
 })
 module.exports = router;
