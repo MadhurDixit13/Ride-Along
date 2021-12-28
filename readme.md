@@ -27,4 +27,14 @@ TEAM MEMBERS <br /><br />
 1911081 Harsh Shah <br />
 
 Screenshots: < /br>
-![Alt text](/Screenshots/Screenshot%20(310).png?raw=true "Optional Title")
+![Alt text](/Screenshots/Screenshot%20(310).png?raw=true "Optional Title") < /br>
+![Alt text](/Screenshots/Screenshot%20(311).png?raw=true "Optional Title") < /br>
+![Alt text](/Screenshots/Screenshot%20(312).png?raw=true "Optional Title") < /br>
+![Alt text](/Screenshots/Screenshot%20(313).png?raw=true "Optional Title") < /br>
+![Alt text](/Screenshots/Screenshot%20(314).png?raw=true "Optional Title") < /br>
+![Alt text](/Screenshots/Screenshot%20(315).png?raw=true "Optional Title") < /br>
+![Alt text](/Screenshots/Screenshot%20(316).png?raw=true "Optional Title") < /br>
+![Alt text](/Screenshots/Screenshot%20(317).png?raw=true "Optional Title") < /br>
+![Alt text](/Screenshots/Screenshot%20(318).png?raw=true "Optional Title") < /br>
+![Alt text](/Screenshots/Screenshot%20(319).png?raw=true "Optional Title") < /br>
+
