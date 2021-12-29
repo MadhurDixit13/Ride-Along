@@ -127,6 +127,7 @@ router.get("/:userID/image", verifyToken, (req, res) => {
 router.get("/logout", (req, res) => {
   delete req.user
   req.user = null
+  Session.Abandon();
   // delete_cookie('connect.sid');
 })
 module.exports = router;
