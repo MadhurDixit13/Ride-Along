@@ -6,6 +6,7 @@ import "./Login.css";
 function Signup() {
   const usernameRef = useRef();
   const passwordRef = useRef();
+  const hobbyRef = useRef();
   const history = useHistory();
   const [error, setError] = useState("");
 
@@ -16,6 +17,7 @@ function Signup() {
       await axios.post("/user/register", {
         username: usernameRef.current.value,
         password: passwordRef.current.value,
+        hobby: hobbyRef.current.value,
       });
       history.replace("/");
     } catch (err) {
@@ -40,6 +42,10 @@ function Signup() {
           <div className="inputContainer">
             <span class="material-icons-outlined">lock</span>
             <input ref={passwordRef} placeholder="Password" type="password" />
+          </div>
+          <div className="inputContainer">
+            <span class="material-icons-outlined">add</span>
+            <input ref={hobbyRef} placeholder="Hobbies" type="text" />
           </div>
           <div className="loginBtn">
             <button type="submit">Register</button>

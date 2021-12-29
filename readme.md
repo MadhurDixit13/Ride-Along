@@ -1,4 +1,4 @@
-A react project for a carpooling app
+A mern project for a carpooling app
 
 In order to use this first download the zip folder of this project and then extract it
 Then follow the following steps
@@ -18,3 +18,23 @@ and
 ```
 npm run dev
 ```
+<br />
+
+This project is created under the mern course of sem 5 KJSCE <br /><br />
+TEAM MEMBERS <br /><br />
+1911074 Madhur Dixit <br />
+1911076 Meet Gandhi <br />
+1911081 Harsh Shah <br />
+
+Screenshots: < /br>
+![Alt text](/Screenshots/Screenshot%20(310).png?raw=true "Optional Title") <br />
+![Alt text](/Screenshots/Screenshot%20(311).png?raw=true "Optional Title") <br />
+![Alt text](/Screenshots/Screenshot%20(312).png?raw=true "Optional Title") <br />
+![Alt text](/Screenshots/Screenshot%20(313).png?raw=true "Optional Title") <br />
+![Alt text](/Screenshots/Screenshot%20(314).png?raw=true "Optional Title") <br />
+![Alt text](/Screenshots/Screenshot%20(315).png?raw=true "Optional Title") <br />
+![Alt text](/Screenshots/Screenshot%20(316).png?raw=true "Optional Title") <br />
+![Alt text](/Screenshots/Screenshot%20(317).png?raw=true "Optional Title") <br />
+![Alt text](/Screenshots/Screenshot%20(318).png?raw=true "Optional Title") <br />
+![Alt text](/Screenshots/Screenshot%20(319).png?raw=true "Optional Title") <br />
+

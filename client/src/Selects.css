@@ -7,7 +7,7 @@
   max-width: 700px;
 }
 
-.selectContainer > .role {
+.selectContainer>.role {
   width: 20%;
 }
 
@@ -23,9 +23,11 @@
 .role::before {
   content: "I'm a";
 }
+
 .pickup::before {
   content: "Pickup";
 }
+
 .dropoff::before {
   content: "Dropoff";
 }
@@ -49,8 +51,8 @@
 }
 
 @media (max-width: 600px) {
-  .selectContainer {
-  }
+  .selectContainer {}
+
   .searchBtn {
     font-size: 0;
     margin-top: 1em;

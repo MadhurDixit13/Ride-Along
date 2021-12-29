@@ -14,9 +14,6 @@ const userSchema = new mongoose.Schema(
       required: true,
       min: 6,
     },
-    hobby: {
-      type: String,
-    },
     profileImageName: {
       type: String,
     },

@@ -161,7 +161,6 @@ function RideTable({ rows }) {
                 })}
               </TableCell>
               <TableCell>${row.price}</TableCell>
-              <TableCell>{row.ownerId.hobby}</TableCell>
               <TableCell>
                 <div style={{ display: "flex" }}>
                   {row.riders.map((rider) => (

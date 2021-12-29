@@ -17,8 +17,7 @@ app.use(express.json());
 
 //connect to db
 mongoose.connect(
-  process.env.REACT_APP_DB_CONNECT,
-  {
+  process.env.REACT_APP_DB_CONNECT, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
@@ -61,7 +60,9 @@ const storage = new GridFsStorage({
 });
 
 //multer middleware
-const upload = multer({ storage });
+const upload = multer({
+  storage
+});
 
 //import routes
 const authRoute = require("./routes/auth");
@@ -76,12 +77,16 @@ const verifyToken = require("./middleware/verifyToken");
 
 //@route POST /upload
 app.post("/image/upload", [verifyToken, upload.single("file")], (req, res) => {
-  res.json({ file: req.file });
+  res.json({
+    file: req.file
+  });
 });
 
 // GET /image/:filename
 app.get("/image/:filename", (req, res) => {
-  gfs.find({ filename: req.params.filename }).toArray((err, file) => {
+  gfs.find({
+    filename: req.params.filename
+  }).toArray((err, file) => {
     // Check if file
     if (!file[0] || file.length[0] === 0) {
       return res.status(404).json({
@@ -107,7 +112,9 @@ app.get("/image/:filename", (req, res) => {
 //DELETE profileImage
 app.delete("/image/:imageId", verifyToken, (req, res) => {
   gfs.delete(new mongoose.Types.ObjectId(req.params.imageId), (err, data) => {
-    if (err) return res.status(404).json({ err: err });
+    if (err) return res.status(404).json({
+      err: err
+    });
   });
 });
 
